@@ -4,18 +4,19 @@ import {
   ScrollVelocityContainer,
   ScrollVelocityRow,
 } from "../components/ui/scroll-based-velocity";
+const CALENDLY_URL = "https://calendly.com/alu0101539157-ull/30min";
 ---
 
 <Layout title="Cesar VI | Barbería y Peluqiería">
   <main class="bg-[#F9F8F6] min-h-screen">
     <nav
-      class="fixed w-full z-50 bg-[#F9F8F6]/80 backdrop-blur-md border-b border-gray-200"
+      class="fixed w-full z-50 bg-[#F9F8F6]/55 backdrop-blur-md border-b border-transparent py-2"
     >
       <div
-        class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center"
+        class="max-w-6xl mx-auto px-6 h-12 flex justify-between items-center"
       >
         <span class="font-serif text-2xl tracking-tighter text-[#4A3F35]"
-          >CESAR VI</span
+          >CÉSAR VI</span
         >
         <div
           class="hidden md:flex gap-8 text-xs uppercase tracking-[0.2em] font-medium text-gray-500"
@@ -54,15 +55,28 @@ import {
           class="text-5xl md:text-8xl font-serif text-[#272422] leading-none mb-6"
         >
           Barberia <br />Peluquería <br /><span
-            class="italic font-light text-[#a5917f]">Cesar VI</span
+            class="italic font-light text-[#a5917f]">César VI</span
           >
         </h1>
-        <div class="flex flex-col md:flex-row gap-4 justify-center">
-          <a
-            href="https://wa.me/34622056843?text=Hola%20Cesar,%20quiero%20pedir%20cita"
-            class="bg-[#4A3F35] text-white px-10 py-4 rounded-full hover:bg-[#8C7662] transition-all duration-300 shadow-lg uppercase text-xs tracking-widest font-bold"
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <button
+            onclick={`Calendly.initPopupWidget({
+      url: '${CALENDLY_URL}',
+      color: '#4A3F35', // Color del botón dentro del calendario
+      textColor: '#ffffff',
+      branding: false
+    });return false;`}
+            class="bg-[#6d6762] text-white px-8 py-4 rounded-full hover:bg-[#8C7662] transition-all duration-300 shadow-xl uppercase text-xs tracking-[0.2em] font-bold"
           >
-            Pedir Cita
+            Reservar Cita Online
+          </button>
+
+          <a
+            href="https://wa.me/34622056843?text=Hola%20Cesar,%20me%20gustaría%20pedir%20cita..."
+            target="_blank"
+            class="bg-[#F4F1EE] border-2 border-[#4A3F35] text-[#4A3F35] px-8 py-4 rounded-full hover:bg-[#4A3F35] hover:text-white transition-all duration-300 uppercase text-xs tracking-[0.2em] font-bold flex items-center justify-center shadow-sm"
+          >
+            Consultar por WhatsApp
           </a>
         </div>
       </div>
@@ -106,7 +120,7 @@ import {
           className="font-serif text-[8rem] md:text-[10rem] opacity-5 text-[#4A3F35] font-bold"
           client:load
         >
-          CESAR VI • CERCANÍA • PROFESIONALIDAD •
+          CÉSAR VI • CERCANÍA • PROFESIONALIDAD •
         </ScrollVelocityRow>
       </ScrollVelocityContainer>
     </section>
@@ -126,7 +140,7 @@ import {
         <p
           class="text-gray-400 text-sm max-w-xs font-light leading-relaxed border-l border-[#8C7662]/30 pl-6"
         >
-          ¿Buscas un acabado específico o un servicio fuera de carta? No dudes
+          ¿Buscas algo específico o un servicio fuera de carta? No dudes
           en <strong>consultarnos</strong>. Estamos aquí para hacer realidad tu
           visión.
         </p>
