@@ -1,11 +1,374 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import {
+  ScrollVelocityContainer,
+  ScrollVelocityRow,
+} from "../components/ui/scroll-based-velocity";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Cesar VI | Barbería y Peluqiería">
+  <main class="bg-[#F9F8F6] min-h-screen">
+    <nav
+      class="fixed w-full z-50 bg-[#F9F8F6]/80 backdrop-blur-md border-b border-gray-200"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center"
+      >
+        <span class="font-serif text-2xl tracking-tighter text-[#4A3F35]"
+          >CESAR VI</span
+        >
+        <div
+          class="hidden md:flex gap-8 text-xs uppercase tracking-[0.2em] font-medium text-gray-500"
+        >
+          <a href="#servicios" class="hover:text-[#8C7662] transition"
+            >Servicios</a
+          >
+          <a href="#productos" class="hover:text-[#8C7662] transition"
+            >Productos</a
+          >
+          <a href="#contacto" class="hover:text-[#8C7662] transition"
+            >Contacto</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="relative h-[65vh] flex items-center justify-center overflow-hidden pt-20"
+    >
+      <div class="absolute inset-0 z-0 px-6 py-6">
+        <div
+          class="w-full h-full bg-[#E5E2DD] rounded-[2rem] overflow-hidden relative"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070"
+            class="w-full h-full object-cover mix-blend-multiply opacity-75"
+            alt="Hero Background"
+          />
+          <div class="absolute inset-0 bg-black/10"></div>
+        </div>
+      </div>
+
+      <div class="relative z-10 text-center px-6">
+        <h1
+          class="text-5xl md:text-8xl font-serif text-[#272422] leading-none mb-6"
+        >
+          Barberia <br />Peluquería <br /><span
+            class="italic font-light text-[#a5917f]">Cesar VI</span
+          >
+        </h1>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <a
+            href="https://wa.me/34622056843?text=Hola%20Cesar,%20quiero%20pedir%20cita"
+            class="bg-[#4A3F35] text-white px-10 py-4 rounded-full hover:bg-[#8C7662] transition-all duration-300 shadow-lg uppercase text-xs tracking-widest font-bold"
+          >
+            Pedir Cita
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-8 pb-0 bg-[#F9F8F6] overflow-hidden">
+      <ScrollVelocityContainer client:load>
+        <ScrollVelocityRow baseVelocity={3} direction={-1} client:load>
+          <div class="flex gap-4 px-2 py-4">
+            <img
+              src="https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=400"
+              class="h-64 w-52 object-cover rounded-2xl shadow-md"
+              alt="Barberia"
+            />
+            <img
+              src="https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg?auto=compress&cs=tinysrgb&w=400"
+              class="h-64 w-52 object-cover rounded-2xl shadow-md grayscale hover:grayscale-0 transition-all duration-500"
+              alt="Herramientas"
+            />
+            <img
+              src="https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=400"
+              class="h-64 w-52 object-cover rounded-2xl shadow-md"
+              alt="Barba"
+            />
+            <img
+              src="https://images.pexels.com/photos/2040189/pexels-photo-2040189.jpeg?auto=compress&cs=tinysrgb&w=400"
+              class="h-64 w-52 object-cover rounded-2xl shadow-md grayscale hover:grayscale-0 transition-all duration-500"
+              alt="Afeitado"
+            />
+            <img
+              src="https://images.pexels.com/photos/2805419/pexels-photo-2805419.jpeg?auto=compress&cs=tinysrgb&w=400"
+              class="h-64 w-52 object-cover rounded-2xl shadow-md"
+              alt="Corte"
+            />
+            <img
+              src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=400"
+              class="h-64 w-52 object-cover rounded-2xl shadow-md grayscale hover:grayscale-0 transition-all duration-500"
+              alt="Sillón"
+            />
+          </div>
+        </ScrollVelocityRow>
+
+        <ScrollVelocityRow
+          baseVelocity={2}
+          direction={1}
+          className="font-serif text-[8rem] md:text-[10rem] opacity-5 text-[#4A3F35] font-bold"
+          client:load
+        >
+          CESAR VI • CERCANÍA • PROFESIONALIDAD •
+        </ScrollVelocityRow>
+      </ScrollVelocityContainer>
+    </section>
+
+    <section id="servicios" class="pt-12 pb-32 px-6 max-w-6xl mx-auto">
+      <div
+        class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6"
+      >
+        <div class="max-w-md">
+          <h2
+            class="text-5xl md:text-7xl font-serif text-[#2C2621] leading-none"
+          >
+            Servicios <br />
+            <span class="italic font-light text-[#8C7662]">Disponibles</span>
+          </h2>
+        </div>
+        <p
+          class="text-gray-400 text-sm max-w-xs font-light leading-relaxed border-l border-[#8C7662]/30 pl-6"
+        >
+          ¿Buscas un acabado específico o un servicio fuera de carta? No dudes
+          en <strong>consultarnos</strong>. Estamos aquí para hacer realidad tu
+          visión.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-24 gap-y-16">
+        {
+          [
+            {
+              id: "I",
+              title: "Corte Cesar VI",
+              price: "12€",
+              desc: "Nuestra firma. Un corte adaptado a tus facciones con acabado a tijera y navaja, con lavado incluido.",
+            },
+            {
+              id: "II",
+              title: "Perfilado de Barba",
+              price: "5€",
+              desc: "Esculpido de barba con ritual de aceites esenciales y toalla caliente.",
+            },
+            {
+              id: "III",
+              title: "Afeitado Clásico",
+              price: "25€",
+              desc: "El placer de lo tradicional. Doble pasada a navaja y masaje facial hidratante.",
+            },
+            {
+              id: "IV",
+              title: "Experiencia Total",
+              price: "35€",
+              desc: "La combinación definitiva de corte y cuidado de barba para una renovación completa.",
+            },
+          ].map((item) => (
+            <div class="group relative">
+              <span class="absolute -top-8 -left-4 text-8xl font-serif text-[#8c76624f] group-hover:text-[#8C7662]/10 transition-colors duration-500 z-0 select-none">
+                {item.id}
+              </span>
+              <div class="relative z-10">
+                <div class="flex justify-between items-baseline mb-4">
+                  <h3 class="text-2xl font-serif text-[#2C2621] group-hover:text-[#8C7662] transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <span class="text-xl font-light text-[#8C7662] italic ml-4">
+                    {item.price}
+                  </span>
+                </div>
+                <p class="text-gray-500 font-light leading-relaxed text-sm pr-10">
+                  {item.desc}
+                </p>
+                <div class="mt-6 w-full h-px bg-gray-100 overflow-hidden">
+                  <div class="w-full h-full bg-[#8C7662] -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out" />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section id="productos" class="py-24 bg-[#f3f2ef] overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 mb-12">
+        <span
+          class="text-[#8C7662] uppercase tracking-[0.3em] text-xs font-semibold mb-2 block"
+          >Premium Shop</span
+        >
+        <h2 class="text-4xl md:text-5xl font-serif text-[#2C2621]">
+          Productos <span class="italic font-light">en Tienda</span>
+        </h2>
+      </div>
+
+      <ScrollVelocityContainer client:load>
+        <ScrollVelocityRow baseVelocity={1.5} direction={-1} client:load>
+          <div class="flex gap-6 px-4 py-4">
+            {
+              [
+                {
+                  name: "Pomada Mate",
+                  img: "https://images.unsplash.com/photo-1599351431247-f10f20466397?q=80&w=400",
+                },
+                {
+                  name: "Aceite de Barba",
+                  img: "https://images.unsplash.com/photo-1626285861696-9f0bf5a49c6d?q=80&w=400",
+                },
+                {
+                  name: "Champú Carbón",
+                  img: "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=400",
+                },
+                {
+                  name: "Aftershave",
+                  img: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=400",
+                },
+                {
+                  name: "Cera de Brillo",
+                  img: "https://images.unsplash.com/photo-1590159763121-7c9fd312190d?q=80&w=400",
+                },
+              ].map((prod) => (
+                <div class="bg-white p-4 rounded-3xl shadow-sm w-64 border border-gray-100 group transition-all duration-500 hover:shadow-xl">
+                  <div class="h-48 w-full overflow-hidden rounded-2xl mb-6 bg-[#F9F8F6]">
+                    <img
+                      src={prod.img}
+                      alt={prod.name}
+                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  <p class="font-serif text-lg text-[#4A3F35] uppercase tracking-tight text-center pb-4">
+                    {prod.name}
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </ScrollVelocityRow>
+
+        <ScrollVelocityRow baseVelocity={1.2} direction={1} client:load>
+          <div class="flex gap-6 px-4 py-4">
+            {
+              [
+                {
+                  name: "Tónico Capilar",
+                  img: "https://images.unsplash.com/photo-1621607512214-68297480165e?q=80&w=400",
+                },
+                {
+                  name: "Cera de Bigote",
+                  img: "https://images.unsplash.com/photo-1532710093739-9470acff878f?q=80&w=400",
+                },
+                {
+                  name: "Bálsamo Calmante",
+                  img: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?q=80&w=400",
+                },
+                {
+                  name: "Peine de Madera",
+                  img: "https://images.unsplash.com/photo-1590156523145-c50062203063?q=80&w=400",
+                },
+                {
+                  name: "Spray de Volumen",
+                  img: "https://images.unsplash.com/photo-1527799822367-a233b47b0ee6?q=80&w=400",
+                },
+              ].map((prod) => (
+                <div class="bg-white p-4 rounded-3xl shadow-sm w-64 border border-gray-100 group transition-all duration-500 hover:shadow-xl">
+                  <div class="h-48 w-full overflow-hidden rounded-2xl mb-6 bg-[#F9F8F6]">
+                    <img
+                      src={prod.img}
+                      alt={prod.name}
+                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  <p class="font-serif text-lg text-[#4A3F35] uppercase tracking-tight text-center pb-4">
+                    {prod.name}
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </ScrollVelocityRow>
+      </ScrollVelocityContainer>
+    </section>
+
+    <footer id="contacto" class="bg-[#302d2c] text-[#E5E2DD] py-20 px-6">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
+        <div>
+          <h2 class="text-4xl font-serif mb-8 italic">Cesar VI</h2>
+          <p
+            class="text-sm tracking-widest uppercase opacity-40 mb-2 font-sans"
+          >
+            Ubicación
+          </p>
+          <a
+            href="https://maps.app.goo.gl/xHwxQwZEKWbkNw4m6"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-lg font-light mb-8 block hover:text-[#8C7662] transition-colors group"
+          >
+            Calle Punta de Anaga, 6, Santa María del Mar, Santa Cruz de Tenerife
+            <span
+              class="inline-block transition-transform group-hover:translate-x-1 ml-1 text-sm"
+              >↗</span
+            >
+          </a>
+
+          <p
+            class="text-sm tracking-widest uppercase opacity-40 mb-2 font-sans"
+          >
+            Contacto
+          </p>
+          <a
+            href="tel:+34622056843"
+            class="text-2xl font-serif hover:text-[#8C7662] transition-colors block"
+            >+34 622 056 843</a
+          >
+        </div>
+        <div class="flex justify-center md:justify-end items-center">
+          <div
+            class="bg-[#383430] p-10 rounded-2xl border border-white/5 w-full md:w-70 text-center shadow-2xl"
+          >
+            <h3
+              class="text-sm font-sans mb-4 opacity-60 uppercase tracking-widest"
+            >
+              Horario<br /><span class="text-[10px]">Lunes a Viernes</span>
+            </h3>
+
+            <p class="text-2xl font-light">10:00 — 20:30</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-6xl mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-[10px] opacity-40 uppercase tracking-widest">
+          © 2026 Cesar VI Barbería. Todos los derechos reservados.
+        </p>
+        <div
+          class="flex gap-6 text-[10px] uppercase tracking-[0.2em] opacity-40"
+        >
+          <a href="/privacidad" class="hover:opacity-100 transition"
+            >Privacidad</a
+          >
+          <a href="/aviso-legal" class="hover:opacity-100 transition"
+            >Aviso Legal</a
+          >
+        </div>
+      </div>
+    </footer>
+  </main>
 </Layout>
+
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300;400;600&display=swap");
+  h1,
+  h2,
+  h3,
+  .font-serif {
+    font-family: "Lora", serif;
+  }
+  body {
+    font-family: "Montserrat", sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

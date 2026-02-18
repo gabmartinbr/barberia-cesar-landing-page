@@ -1,23 +1,50 @@
+---
+import '../styles/global.css'
+interface Props { 
+  title: string;
+  description?: string; // Añadimos descripción opcional
+}
+const { 
+  title, 
+  description = "Cesar VI - Barbería y Peluquería en Santa Cruz de Tenerife. Cortes clásicos, degradados y cuidado de barba profesional." 
+} = Astro.props;
+---
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="barberia tenerife, peluqueria santa cruz, corte de pelo hombre, cesar vi, degradado, barba, cuevas blancas, santa maria del mar, añaza" />
+    <link rel="canonical" href="https://tudominio.com" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/img-social.jpg" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-gray-50 text-gray-800 antialiased">
+    <slot />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  /* Tu estilo se mantiene igual */
+  html { font-family: 'Open Sans', sans-serif; scroll-behavior: smooth; }
+  h1, h2, h3 { font-family: 'Lora', serif; }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 50;
+  }
 </style>
